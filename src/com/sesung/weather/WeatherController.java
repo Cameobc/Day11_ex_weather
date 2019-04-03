@@ -6,10 +6,16 @@ import java.util.Scanner;
 public class WeatherController {
 	//getWeather실행하고 결과물을 weathers에 대입
 	//1.날씨정보추가 - setWeather 호출한 결과물을 weathers 에 추가 /2.날씨정보출력 - weatherView / 3.날씨정보종료
-	Scanner sc = new Scanner(System.in);
-	WeatherInit winit = new WeatherInit();
-	ArrayList<Weather> weathers;
-	WeatherView view = new WeatherView();
+	private Scanner sc; 
+	private WeatherInit winit;
+	private ArrayList<Weather> weathers;
+	private WeatherView view;
+	
+	public WeatherController() {
+		sc = new Scanner(System.in);
+		winit = new WeatherInit();
+		view = new WeatherView();
+	}
 
 
 	public void start() {

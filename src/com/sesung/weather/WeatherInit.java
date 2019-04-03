@@ -16,16 +16,25 @@ public class WeatherInit {
 		ArrayList<Weather> weathers = new ArrayList<Weather>();
 		
 		String [] total = info.split(",");
-		for(int i =0; i<total.length;i++) {
+		for(int i =0; i<total.length; i=i+5) {
 			Weather weather = new Weather();
 			weather.setCity(total[i].trim());
-			weather.setState(total[++i].trim());
-			weather.setTem(Integer.parseInt(total[++i].trim()));
-			weather.setHum(Integer.parseInt(total[++i].trim()));
-			weather.setMise(Double.parseDouble(total[++i].trim()));
-			
+			weather.setState(total[i+1].trim());
+			weather.setTem(Integer.parseInt(total[i+2].trim()));
+			weather.setHum(Integer.parseInt(total[i+3].trim()));
+			weather.setMise(Double.parseDouble(total[i+4].trim()));
 			weathers.add(weather);
 		}
+		
+//		for(int i =0; i<total.length;i++) {
+//			Weather weather = new Weather();
+//			weather.setCity(total[i].trim());
+//			weather.setState(total[++i].trim());
+//			weather.setTem(Integer.parseInt(total[++i].trim()));
+//			weather.setHum(Integer.parseInt(total[++i].trim()));
+//			weather.setMise(Double.parseDouble(total[++i].trim()));
+//			weathers.add(weather);
+//		}
 		return weathers;
 	}
 
