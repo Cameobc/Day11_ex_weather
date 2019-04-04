@@ -6,10 +6,12 @@ import java.util.Scanner;
 public class WeatherInit {
 
 	private String info;
+	private Scanner sc;
 
 	public WeatherInit() {
 		info="seoul, 맑음, 10, 20, 0.3, daejeon, 비, 22, 50, 0.1,"
 				+ "incheon, 태풍, 56, 90, 22.2, jeju, 흐림, 15, 10, 1.2";
+		sc = new Scanner(System.in);
 	}
 
 	public ArrayList<Weather> getWeathers() {
@@ -40,10 +42,8 @@ public class WeatherInit {
 
 	public Weather setWeather() {
 		Weather weather = new Weather();
-		Scanner sc = new Scanner(System.in);
 		System.out.println("도시이름");
-		String city = sc.next();
-		weather.setCity(city);
+		weather.setCity(sc.next());
 		System.out.println("날     씨");
 		String state = sc.next();
 		weather.setState(state);
@@ -60,40 +60,41 @@ public class WeatherInit {
 	}
 
 	public Weather findWeather(ArrayList<Weather> weathers) {
-		Weather weather = new Weather();
-		Scanner sc = new Scanner(System.in);
+		Weather weather = null;
 		System.out.println("검색할 도시 이름 입력");
 		String city = sc.next();
-		boolean check=true;
+//		boolean check=true;
 		for(int i=0; i<weathers.size();i++) {
 			if(city.equals(weathers.get(i).getCity())) {
 				weather=weathers.get(i);
-				check=!check;
+//				check=!check;
 				break;
 			}
 		}
-		if(check) {
-			System.out.println("없는 도시 입니다.");
-		}
-
+//		if(check) {
+//			System.out.println("없는 도시 입니다.");
+//		}
 		return weather;
 	}
 
-	public void deleteWeather(ArrayList<Weather> weathers) {
+	public String deleteWeather(ArrayList<Weather> weathers) {
 		System.out.println("삭제할 도시 이름 입력");
-		Scanner sc = new Scanner(System.in);
 		String city = sc.next();
-		boolean check=true;
+		String result ="없는 도시입니다.";
+//		boolean check=true;
 		for(int i =0; i<weathers.size(); i++) {
 			if(city.equals(weathers.get(i).getCity())){
 				weathers.remove(i);
-				check=!check;
+				result = "삭제가 완료되었습니다.";
+//				check=!check;
 				break;
 			}
 		}
-		if(check) {
-			System.out.println("잘못 입력했습니다.");   // for문이 끝나고 난뒤 boolean 타입을 이용해 if로 출력문을 돌려야 중복출력이 일어나지 않는다.
-		}
+		return result;
+//		if(check) {
+//			System.out.println("잘못 입력했습니다.");   // for문이 끝나고 난뒤 boolean 타입을 이용해 if로 출력문을 돌려야 중복출력이 일어나지 않는다.
+//	
+//		}
 	}
 
 }

@@ -5,5 +5,4 @@ public class WeatherMain {
 		WeatherController wc = new WeatherController();
 		wc.start();
 	}
-
 }

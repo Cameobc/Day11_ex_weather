@@ -3,8 +3,8 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="com.sesung.weather.Weather" project="Day11_ex_weather" 
     file="/Day11_ex_weather/src/com/sesung/weather/Weather.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="363" width="167" x="41" y="44"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="-1" width="-1" x="111" y="193"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -12,34 +12,34 @@
   </class>  
   <class id="2" language="java" name="com.sesung.weather.WeatherController" project="Day11_ex_weather" 
     file="/Day11_ex_weather/src/com/sesung/weather/WeatherController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="153" width="129" x="337" y="79"/>    
+    <position height="153" width="129" x="395" y="119"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="com.sesung.weather.WeatherInit" project="Day11_ex_weather" 
-    file="/Day11_ex_weather/src/com/sesung/weather/WeatherInit.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="399" y="395"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="4" language="java" name="com.sesung.weather.WeatherMain" project="Day11_ex_weather" 
+  <class id="3" language="java" name="com.sesung.weather.WeatherMain" project="Day11_ex_weather" 
     file="/Day11_ex_weather/src/com/sesung/weather/WeatherMain.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="649" y="127"/>    
+    <position height="-1" width="-1" x="452" y="54"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="com.sesung.weather.WeatherView" project="Day11_ex_weather" 
+  <class id="4" language="java" name="com.sesung.weather.WeatherView" project="Day11_ex_weather" 
     file="/Day11_ex_weather/src/com/sesung/weather/WeatherView.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="179" x="705" y="303"/>    
+    <position height="135" width="179" x="673" y="143"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.sesung.weather.WeatherInit" project="Day11_ex_weather" 
+    file="/Day11_ex_weather/src/com/sesung/weather/WeatherInit.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="433" y="409"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,19 +48,15 @@
   </class>  
   <association id="6">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="7" name="winit">        
-        <position height="18" width="33" x="341" y="280"/>      
-      </attribute>      
-      <multiplicity id="8" minimum="0" maximum="1"/>    
+      <attribute id="7" name="weathers"/>      
+      <multiplicity id="8" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
+    <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="9">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="10" name="view">        
-        <position height="18" width="34" x="680" y="268"/>      
-      </attribute>      
+      <attribute id="10" name="winit"/>      
       <multiplicity id="11" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="5" navigable="true"/>    
@@ -68,12 +64,10 @@
   </association>  
   <association id="12">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="13" name="weathers">        
-        <position height="18" width="57" x="223" y="143"/>      
-      </attribute>      
-      <multiplicity id="14" minimum="0" maximum="2147483647"/>    
+      <attribute id="13" name="view"/>      
+      <multiplicity id="14" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
+    <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
