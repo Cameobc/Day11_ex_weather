@@ -2,6 +2,7 @@ package com.sesung.weather;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class WeatherInit {
 
@@ -16,17 +17,27 @@ public class WeatherInit {
 
 	public ArrayList<Weather> getWeathers() {
 		ArrayList<Weather> weathers = new ArrayList<Weather>();
-		
-		String [] total = info.split(",");
-		for(int i =0; i<total.length; i=i+5) {
+		StringTokenizer st = new StringTokenizer(info, ",");
+		while(st.hasMoreTokens()) {
 			Weather weather = new Weather();
-			weather.setCity(total[i].trim());
-			weather.setState(total[i+1].trim());
-			weather.setTem(Integer.parseInt(total[i+2].trim()));
-			weather.setHum(Integer.parseInt(total[i+3].trim()));
-			weather.setMise(Double.parseDouble(total[i+4].trim()));
+			weather.setCity(st.nextToken().trim());
+			weather.setState(st.nextToken().trim());
+			weather.setTem(Integer.parseInt(st.nextToken().trim()));
+			weather.setHum(Integer.parseInt(st.nextToken().trim()));
+			weather.setMise(Double.parseDouble(st.nextToken().trim()));
 			weathers.add(weather);
 		}
+		
+//		String [] total = info.split(",");
+//		for(int i =0; i<total.length; i=i+5) {
+//			Weather weather = new Weather();
+//			weather.setCity(total[i].trim());
+//			weather.setState(total[i+1].trim());
+//			weather.setTem(Integer.parseInt(total[i+2].trim()));
+//			weather.setHum(Integer.parseInt(total[i+3].trim()));
+//			weather.setMise(Double.parseDouble(total[i+4].trim()));
+//			weathers.add(weather);
+//		}
 		
 //		for(int i =0; i<total.length;i++) {
 //			Weather weather = new Weather();
