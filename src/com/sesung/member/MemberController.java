@@ -28,27 +28,22 @@ public class MemberController {
 			System.out.println("5.종    료");
 			int select = sc.nextInt();
 			
-			switch(select) {
-			case 1:
+			if(select==1) {
 				Member m = mi.memberJoin();
 				map.put(m.getId(), m);
-				break;
-			case 2:
+				}else if(select==2) {
 				Member m2 = mi.memberLogin(map);
 				if(m2 != null) {
 					mv.view("로그인 성공");
 				}else {
 					mv.view("로그인 실패");
 				}
-				break;
-			case 3:
+				}else if(select==3){
 				String st = mi.memberDelete(map);
 				mv.view(st);
-				break;
-			case 4:
+				}else if(select==4) {
 				mv.view(map);
-				break;
-				default:
+				}else{
 					mv.view("프로그램 종료");
 					check=!check;
 			}
