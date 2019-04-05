@@ -25,7 +25,7 @@ public class MemberController {
 			System.out.println("2.로 그 인");
 //			System.out.println("3.회원탈퇴");
 //			System.out.println("4.전체정보출력");
-			System.out.println("5.종    료");
+			System.out.println("3.종    료");
 			int select = sc.nextInt();
 
 			if (select == 1) {
